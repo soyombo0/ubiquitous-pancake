@@ -2,7 +2,7 @@
 
 namespace App\View\Components;
 
-use App\Models\Taxi;
+use App\Domain\Models\Taxi;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;

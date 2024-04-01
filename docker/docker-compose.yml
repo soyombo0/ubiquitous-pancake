@@ -1,0 +1,44 @@
+version: "3.9"
+
+name: "paid_test"
+
+
+services:
+    app:
+        container_name: app
+        build:
+          context: ./php
+          network: host
+        ports:
+            - "9000:9000"
+        volumes:
+            - ./php/php.ini:/usr/local/etc/php/conf.d/custom.ini
+            - ./../:/var/www
+        working_dir: /var/www
+        networks:
+            - backend
+    nginx:
+        container_name: nginx
+        image: nginx:latest
+        volumes:
+            - ./nginx/conf.d/:/etc/nginx/conf.d
+            - ./../:/var/www
+        networks:
+            - backend
+        ports:
+            - "80:80"
+    db:
+        container_name: db
+        image: mysql:latest
+        ports:
+            - "3306:3306"
+        networks:
+            - backend
+        volumes:
+            - ./mysql/data:/var/lib/mysql
+        environment:
+            MYSQL_DATABASE: app
+            MYSQL_ROOT_PASSWORD: password
+networks:
+    backend:
+        name: backend

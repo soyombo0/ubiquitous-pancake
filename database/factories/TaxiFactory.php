@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\Taxi;
+use App\Domain\Models\Taxi;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class TaxiFactory extends Factory

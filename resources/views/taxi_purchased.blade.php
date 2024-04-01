@@ -6,7 +6,7 @@
             <h3>Купленные авто</h3>
             @foreach ($userTaxis as $userTaxi)
                 <div class="col-md-4 mb-3">
-                    <x-my-taxi-card :taxi="$userTaxi"/>
+                    <x-my-taxi-card :taxi="$userTaxi" :taxi-colors="$taxiColors"/>
                 </div>
             @endforeach
         </div>

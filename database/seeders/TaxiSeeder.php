@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Taxi;
+use App\Domain\Models\Taxi;
 use Illuminate\Database\Seeder;
 
 class TaxiSeeder extends Seeder
